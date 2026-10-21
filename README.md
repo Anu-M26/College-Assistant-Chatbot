@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🎓 College Assistant Chatbot
 
 A modern, interactive chatbot built with Python and Flask that helps students get instant answers to college-related questions using OpenAI's GPT models.
@@ -242,3 +243,7 @@ Created as a learning project for Python, Flask, and AI integration.
 **Have questions?** Check the comments in the code - every function is explained!
 
 🎉 Happy learning and building!
+=======
+# College-Assistant-Chatbot
+An AI-powered College Assistant Chatbot developed using HTML, CSS, JavaScript, Python Flask, SQLite, and Ollama Llama 3.2. It provides students and faculty with quick access to college-related information anytime.
+>>>>>>> 15fc49c3b0396b8b5b8d727946231b9eb8ca8d1a
