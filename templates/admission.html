@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admission - {{ college.college_name }}</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f3ff, #fafafa);
+            color: #1e293b;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #4c1d95, #7c3aed, #8b5cf6);
+            color: white;
+            padding: 32px 8%;
+            box-shadow: 0 5px 20px rgba(124,58,237,0.25);
+        }
+
+        .page-header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .page-header p {
+            color: #ede9fe;
+            margin-top: 8px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 35px auto;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 25px;
+            padding: 11px 20px;
+            background: white;
+            color: #6d28d9;
+            text-decoration: none;
+            border-radius: 9px;
+            font-weight: 600;
+            border: 1px solid #ddd6fe;
+            box-shadow: 0 4px 12px rgba(124,58,237,0.08);
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: #6d28d9;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .admission-card {
+            background: white;
+            padding: 30px;
+            border-radius: 17px;
+            border: 1px solid #e9d5ff;
+            box-shadow: 0 8px 25px rgba(15,23,42,0.08);
+        }
+
+        .info {
+            padding: 18px 0;
+            border-bottom: 1px solid #eee;
+            line-height: 1.7;
+        }
+
+        .info:last-child {
+            border-bottom: none;
+        }
+
+        .info strong {
+            display: block;
+            color: #6d28d9;
+            margin-bottom: 7px;
+            font-size: 17px;
+        }
+
+        .document-list,
+        .process-list {
+            padding-left: 22px;
+        }
+
+        .document-list li,
+        .process-list li {
+            margin: 10px 0;
+        }
+
+        .document-list li::marker,
+        .process-list li::marker {
+            color: #7c3aed;
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header class="page-header">
+
+    <h1>
+        Admission Information
+    </h1>
+
+    <p>
+        {{ college.college_name }}
+    </p>
+
+</header>
+
+<div class="container">
+
+    <a href="/" class="back-button">
+        ← Back to Home
+    </a>
+
+    <div class="admission-card">
+
+        <div class="info">
+
+            <strong>
+                Eligibility
+            </strong>
+
+            {{ college.admission.eligibility }}
+
+        </div>
+
+        <div class="info">
+
+            <strong>
+                Entrance Examination
+            </strong>
+
+            {{ college.admission.entrance_exam }}
+
+        </div>
+
+        <div class="info">
+
+            <strong>
+                Application Deadline
+            </strong>
+
+            {{ college.admission.application_deadline }}
+
+        </div>
+
+        <div class="info">
+
+            <strong>
+                Application Fee
+            </strong>
+
+            ₹{{ "{:,}".format(college.admission.application_fee) }}
+
+        </div>
+
+        <div class="info">
+
+            <strong>
+                Required Documents
+            </strong>
+
+            <ul class="document-list">
+
+                {% for document in college.admission.required_documents %}
+
+                <li>
+                    {{ document }}
+                </li>
+
+                {% endfor %}
+
+            </ul>
+
+        </div>
+
+        <div class="info">
+
+            <strong>
+                Admission Process
+            </strong>
+
+            <ol class="process-list">
+
+                {% for step in college.admission.admission_process %}
+
+                <li>
+                    {{ step }}
+                </li>
+
+                {% endfor %}
+
+            </ol>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

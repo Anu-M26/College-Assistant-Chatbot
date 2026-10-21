@@ -1,0 +1,185 @@
+{
+  "college_name": "Rathinam Technical Campus",
+  "college_location": "Coimbatore, India",
+  "college_founded": 2010,
+  "contact_email": "info@rathinamtech.edu",
+  "contact_phone": "+91-452-2456789",
+
+  "departments": [
+    {
+      "name": "Computer Science",
+      "head": "Dr. John Smith",
+      "courses": [
+        "Python Programming",
+        "Web Development",
+        "Data Science",
+        "Artificial Intelligence"
+      ]
+    },
+    {
+      "name": "Business Administration",
+      "head": "Dr. Sarah Johnson",
+      "courses": [
+        "Financial Management",
+        "Marketing",
+        "Entrepreneurship",
+        "Business Analytics"
+      ]
+    },
+    {
+      "name": "Engineering",
+      "head": "Dr. Mike Wilson",
+      "courses": [
+        "Mechanical Engineering",
+        "Electrical Engineering",
+        "Civil Engineering"
+      ]
+    }
+  ],
+
+  "admission": {
+    "eligibility": "12th pass or equivalent qualification",
+    "entrance_exam": "TAI Entrance Test (TAI-ET)",
+    "application_deadline": "June 30, 2024",
+    "application_fee": 50000,
+    "currency": "INR",
+    "required_documents": [
+      "10th Mark Sheet",
+      "12th Mark Sheet",
+      "Transfer Certificate",
+      "Community Certificate",
+      "Passport Size Photographs",
+      "Aadhaar Card"
+    ],
+    "admission_process": [
+      "Check course eligibility",
+      "Complete the application form",
+      "Submit required documents",
+      "Pay application fee",
+      "Attend entrance examination if required",
+      "Complete admission confirmation"
+    ]
+  },
+
+  "fees": {
+    "course_fees": {
+      "Computer Science": 50000,
+      "Business Administration": 55000,
+      "Engineering": 75000,
+      "currency": "INR",
+      "period": "per semester"
+    },
+
+    "hostel_fees": {
+      "boys_hostel": 30000,
+      "girls_hostel": 30000,
+      "currency": "INR",
+      "period": "per semester"
+    },
+
+    "exam_fees": {
+      "regular_exam": 2000,
+      "arrear_exam": 500,
+      "currency": "INR"
+    },
+
+    "transport_fees": {
+      "coimbatore_city": 15000,
+      "nearby_routes": 12000,
+      "long_distance_routes": 20000,
+      "currency": "INR",
+      "period": "per semester"
+    },
+
+    "library_fee_per_semester": 1000,
+    "lab_fee_per_semester": 150
+  },
+
+  "library": {
+    "opening_time": "08:00 AM",
+    "closing_time": "08:00 PM",
+    "total_books": 50000,
+    "computers_available": 100,
+    "wifi_available": true
+  },
+
+  "working_hours": {
+    "college_opens": "09:00 AM",
+    "college_closes": "04:00 PM",
+    "office_opens": "09:00 AM",
+    "office_closes": "05:00 PM"
+  },
+
+  "placement": {
+    "average_package": 600000,
+    "currency": "INR",
+    "placement_percentage": 95,
+
+    "departments": {
+      "Computer Science": {
+        "companies": [
+          "Google",
+          "Microsoft",
+          "Amazon",
+          "Meta"
+        ],
+        "job_roles": [
+          "Software Developer",
+          "Web Developer",
+          "Data Analyst",
+          "Python Developer"
+        ]
+      },
+
+      "Business Administration": {
+        "companies": [
+          "Goldman Sachs",
+          "Deloitte",
+          "KPMG"
+        ],
+        "job_roles": [
+          "Business Analyst",
+          "Marketing Executive",
+          "Financial Analyst"
+        ]
+      },
+
+      "Engineering": {
+        "companies": [
+          "Tata",
+          "L&T",
+          "Infosys"
+        ],
+        "job_roles": [
+          "Mechanical Engineer",
+          "Electrical Engineer",
+          "Civil Engineer"
+        ]
+      }
+    }
+  },
+
+  "attendance": {
+    "minimum_percentage": 75,
+    "policy": "Students must maintain at least 75% attendance to be eligible for exams",
+    "medical_leave": "Medical certificate required for more than 3 consecutive days"
+  },
+
+  "campus_facilities": [
+    "Wi-Fi enabled campus",
+    "Sports complex with basketball, volleyball, badminton courts",
+    "Gym and fitness center",
+    "Cafeteria with nutritious food",
+    "Hostel facilities for boys and girls",
+    "Medical center",
+    "Auditorium for events",
+    "Computer labs"
+  ],
+
+  "events": [
+    "Annual Sports Day (March)",
+    "College Fest (February)",
+    "Technical Workshops (Monthly)",
+    "Guest Lectures (Bi-weekly)"
+  ]
+}

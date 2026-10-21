@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Fees - {{ college.college_name }}</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ecfdf5, #f8fafc);
+            color: #1e293b;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #064e3b, #047857, #10b981);
+            color: white;
+            padding: 32px 8%;
+            box-shadow: 0 5px 20px rgba(4,120,87,0.25);
+        }
+
+        .page-header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .page-header p {
+            color: #d1fae5;
+            margin-top: 8px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 35px auto;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 25px;
+            padding: 11px 20px;
+            background: white;
+            color: #047857;
+            text-decoration: none;
+            border-radius: 9px;
+            font-weight: 600;
+            border: 1px solid #bbf7d0;
+            box-shadow: 0 4px 12px rgba(4,120,87,0.08);
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: #047857;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .fee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 22px;
+        }
+
+        .fee-card {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid #d1fae5;
+            box-shadow: 0 8px 25px rgba(15,23,42,0.08);
+            transition: 0.3s;
+        }
+
+        .fee-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 28px rgba(4,120,87,0.14);
+        }
+
+        .fee-card h2 {
+            margin-top: 0;
+            color: #065f46;
+        }
+
+        .fee-item {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 13px 0;
+            border-bottom: 1px solid #ecfdf5;
+        }
+
+        .fee-item:last-child {
+            border-bottom: none;
+        }
+
+        .fee-name {
+            color: #475569;
+        }
+
+        .fee-amount {
+            font-weight: 700;
+            color: #047857;
+            white-space: nowrap;
+        }
+
+        .period {
+            margin-top: 15px;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header class="page-header">
+
+    <h1>
+        Fee Structure
+    </h1>
+
+    <p>
+        {{ college.college_name }}
+    </p>
+
+</header>
+
+<div class="container">
+
+    <a href="/" class="back-button">
+        ← Back to Home
+    </a>
+
+    <div class="fee-grid">
+
+        <div class="fee-card">
+
+            <h2>
+                Course Fees
+            </h2>
+
+            {% for course, amount in college.fees.course_fees.items() %}
+
+                {% if course not in ['currency', 'period'] %}
+
+                <div class="fee-item">
+
+                    <span class="fee-name">
+                        {{ course }}
+                    </span>
+
+                    <span class="fee-amount">
+                        ₹{{ "{:,}".format(amount) }}
+                    </span>
+
+                </div>
+
+                {% endif %}
+
+            {% endfor %}
+
+            <div class="period">
+                {{ college.fees.course_fees.period }}
+            </div>
+
+        </div>
+
+
+        <div class="fee-card">
+
+            <h2>
+                Hostel Fees
+            </h2>
+
+            <div class="fee-item">
+
+                <span class="fee-name">
+                    Boys Hostel
+                </span>
+
+                <span class="fee-amount">
+                    ₹{{ "{:,}".format(college.fees.hostel_fees.boys_hostel) }}
+                </span>
+
+            </div>
+
+            <div class="fee-item">
+
+                <span class="fee-name">
+                    Girls Hostel
+                </span>
+
+                <span class="fee-amount">
+                    ₹{{ "{:,}".format(college.fees.hostel_fees.girls_hostel) }}
+                </span>
+
+            </div>
+
+            <div class="period">
+                {{ college.fees.hostel_fees.period }}
+            </div>
+
+        </div>
+
+
+        <div class="fee-card">
+
+            <h2>
+                Examination Fees
+            </h2>
+
+            <div class="fee-item">
+
+                <span class="fee-name">
+                    Regular Exam
+                </span>
+
+                <span class="fee-amount">
+                    ₹{{ "{:,}".format(college.fees.exam_fees.regular_exam) }}
+                </span>
+
+            </div>
+
+            <div class="fee-item">
+
+                <span class="fee-name">
+                    Arrear Exam
+                </span>
+
+                <span class="fee-amount">
+                    ₹{{ "{:,}".format(college.fees.exam_fees.arrear_exam) }}
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="fee-card">
+
+            <h2>
+                Transport Fees
+            </h2>
+
+            <div class="fee-item">
+
+                <span class="fee-name">
+                    Coimbatore City
+                </span>
+
+                <span class="fee-amount">
+                    ₹{{ "{:,}".format(college.fees.transport_fees.coimbatore_city) }}
+                </span>
+
+            </div>
+
+            <div class="fee-item">
+
+                <span class="fee-name">
+                    Nearby Routes
+                </span>
+
+                <span class="fee-amount">
+                    ₹{{ "{:,}".format(college.fees.transport_fees.nearby_routes) }}
+                </span>
+
+            </div>
+
+            <div class="fee-item">
+
+                <span class="fee-name">
+                    Long Distance
+                </span>
+
+                <span class="fee-amount">
+                    ₹{{ "{:,}".format(college.fees.transport_fees.long_distance_routes) }}
+                </span>
+
+            </div>
+
+            <div class="period">
+                {{ college.fees.transport_fees.period }}
+            </div>
+
+        </div>
+
+
+        <div class="fee-card">
+
+            <h2>
+                Other Fees
+            </h2>
+
+            <div class="fee-item">
+
+                <span class="fee-name">
+                    Library Fee
+                </span>
+
+                <span class="fee-amount">
+                    ₹{{ "{:,}".format(college.fees.library_fee_per_semester) }}
+                </span>
+
+            </div>
+
+            <div class="fee-item">
+
+                <span class="fee-name">
+                    Lab Fee
+                </span>
+
+                <span class="fee-amount">
+                    ₹{{ "{:,}".format(college.fees.lab_fee_per_semester) }}
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

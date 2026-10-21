@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Attendance - {{ college.college_name }}</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #fff7ed, #f8fafc);
+            color: #1e293b;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #7c2d12, #c2410c, #f97316);
+            color: white;
+            padding: 32px 8%;
+            box-shadow: 0 5px 20px rgba(194,65,12,0.25);
+        }
+
+        .page-header h1 {
+            margin: 0;
+            font-size: 32px;
+        }
+
+        .page-header p {
+            color: #ffedd5;
+            margin-top: 8px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 35px auto;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 25px;
+            padding: 11px 20px;
+            background: white;
+            color: #c2410c;
+            text-decoration: none;
+            border-radius: 9px;
+            font-weight: 600;
+            border: 1px solid #fed7aa;
+            box-shadow: 0 4px 12px rgba(194,65,12,0.08);
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: #c2410c;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .attendance-card {
+            background: white;
+            padding: 35px;
+            border-radius: 18px;
+            border: 1px solid #ffedd5;
+            box-shadow: 0 10px 30px rgba(15,23,42,0.08);
+        }
+
+        .percentage {
+            text-align: center;
+            padding: 30px;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #fff7ed, #ffedd5);
+            border-radius: 15px;
+            border: 1px solid #fed7aa;
+        }
+
+        .percentage h2 {
+            font-size: 55px;
+            margin: 0;
+            color: #c2410c;
+            font-weight: 800;
+        }
+
+        .percentage p {
+            color: #7c2d12;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .info {
+            padding: 20px 5px;
+            border-bottom: 1px solid #e5e7eb;
+            line-height: 1.7;
+            color: #475569;
+        }
+
+        .info:last-child {
+            border-bottom: none;
+        }
+
+        .info strong {
+            display: block;
+            margin-bottom: 7px;
+            color: #c2410c;
+            font-size: 17px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<header class="page-header">
+
+    <h1>
+        Attendance Information
+    </h1>
+
+    <p>
+        {{ college.college_name }}
+    </p>
+
+</header>
+
+<div class="container">
+
+    <a href="/" class="back-button">
+        ← Back to Home
+    </a>
+
+    <div class="attendance-card">
+
+        <div class="percentage">
+
+            <h2>
+                {{ college.attendance.minimum_percentage }}%
+            </h2>
+
+            <p>
+                Minimum Attendance Required
+            </p>
+
+        </div>
+
+        <div class="info">
+
+            <strong>
+                Attendance Policy
+            </strong>
+
+            {{ college.attendance.policy }}
+
+        </div>
+
+        <div class="info">
+
+            <strong>
+                Medical Leave
+            </strong>
+
+            {{ college.attendance.medical_leave }}
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
